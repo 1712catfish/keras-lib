@@ -7,7 +7,6 @@ from keras_cv.layers import RandAugment
 from sklearn.preprocessing import MultiLabelBinarizer
 
 
-
 def df_train_test_split(df, test_size=0.2, random_state=1712):
     train = df.sample(frac=1 - test_size, random_state=random_state)
     test = df.drop(train.index)
@@ -95,13 +94,12 @@ def create_csv_datasets(csv_path, **kwargs):
 
     return train_dataset, validation_dataset, len(train_df), len(val_df)
 
-
 # def solve_dataset():
-#     if CSV_PATH is not None:
-#         return create_csv_datasets(
-#             CSV_PATH,
-#             batch_size=BATCH_SIZE,
-#             directory=IMAGE_PATH,
-#             target_size=(IMSIZE, IMSIZE),
-#             seed=SEED,
-#         )
+    if CSV_PATH is not None:
+        return create_csv_datasets(
+            CSV_PATH,
+            batch_size=BATCH_SIZE,
+            directory=IMAGE_PATH,
+            target_size=(IMSIZE, IMSIZE),
+            seed=SEED,
+        )
