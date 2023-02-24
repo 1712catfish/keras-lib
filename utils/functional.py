@@ -42,7 +42,3 @@ def retrieve_global_valid_constants(func):
     constants = list_global_constants(condition=lambda k: not callable(eval(k)))
     keys = [k for k in constants if k.lower() in valid_args]
     return retrieve_global_variables(keys)
-
-
-def lower_keys(d):
-    return {k.lower(): v for k, v in d.items()}
